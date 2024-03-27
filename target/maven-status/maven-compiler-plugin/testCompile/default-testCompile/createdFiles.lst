@@ -1,0 +1,8 @@
+pages\BasePage.class
+tests\SearchTest.class
+tests\ContactFormTest.class
+pages\HomePage.class
+pages\SearchPage.class
+tests\PixelPerfectTest.class
+pages\ContactFormPage.class
+tests\SmokeTest.class

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="tests.ContactFormTest">
+        <methods>
+          <include name="setup"/>
+          <include name="afterMethod"/>
+          <include name="test"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- tests.ContactFormTest -->
+      <class name="tests.PixelPerfectTest">
+        <methods>
+          <include name="test"/>
+          <include name="setup"/>
+          <include name="afterMethod"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- tests.PixelPerfectTest -->
+      <class name="tests.SmokeTest">
+        <methods>
+          <include name="setup"/>
+          <include name="afterMethod"/>
+          <include name="initialSmokeTest"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- tests.SmokeTest -->
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="setup"/>
+          <include name="afterMethod"/>
+          <include name="searchTest"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
