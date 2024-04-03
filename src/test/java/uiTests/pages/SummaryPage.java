@@ -21,10 +21,10 @@ public class SummaryPage extends BasePage {
         check.click();
     }
 
-    public SummaryPage clickNextButton() {
+    public LastPage clickNextButton() {
         wait.waitForElementToBeClickable(driver, nextButton, 5);
         nextButton.click();
-        return new SummaryPage(driver);
+        return new LastPage(driver);
     }
 
     public void acceptTermsAndConditions(){
