@@ -53,11 +53,11 @@ public class Step4Page extends BasePage {
     }
 
     public void setPartnerNameField(String partnerName) {
-        this.occupationField.sendKeys(partnerName);
+        this.partnerNameField.sendKeys(partnerName);
     }
 
     public void setPartnerIdField(String partnerId) {
-        this.occupationField.sendKeys(partnerId);
+        this.partnerIdField.sendKeys(partnerId);
     }
 
     public void setSalaryIncomeDropdown(String salaryIncomeDropdown) {
