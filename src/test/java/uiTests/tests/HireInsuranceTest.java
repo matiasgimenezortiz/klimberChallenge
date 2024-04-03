@@ -14,7 +14,7 @@ public class HireInsuranceTest extends BaseTest {
         validate.assertTrue(homePage.isLoaded());
 
         homePage.fillPersonalInfo("02/06/1988", "Misiones", "362", "4682226");
-        homePage.moveSliderRandomly();
+        //homePage.moveSliderRandomly(); This method moves the slider randomly and the purchase can not be completed because of that
         Step2Page secondPage = homePage.clickContratarButton();
         validate.assertTrue(secondPage.isLoaded());
 
@@ -22,7 +22,7 @@ public class HireInsuranceTest extends BaseTest {
         Step3Page thirdPage = secondPage.clickNextButton();
         validate.assertTrue(thirdPage.isLoaded());
 
-        thirdPage.fillPersonalDetails("Matias", "Gimenez", "12345678", "Masculino", "Masculino", "Soltera/o", "m@g.com", "superSecretPassword");
+        thirdPage.fillPersonalDetails("Matias", "Gimenez", Step3Page.generateRandomNumberID(), "Masculino", "Masculino", "Soltera/o", Step3Page.generateRandomEmail(), "superSecretPassword");
         thirdPage.fillAddressDetails("Edison", "2435", "1", "A", "3300", "Posadas");
         Step4Page step4Page = thirdPage.clickNextButton();
         validate.assertTrue(step4Page.isLoaded());
@@ -37,7 +37,10 @@ public class HireInsuranceTest extends BaseTest {
 
         SummaryPage summaryPage = sixthPage.clickNextButton();
         validate.assertTrue(summaryPage.isLoaded());
+
         summaryPage.acceptTermsAndConditions();
-        summaryPage.clickNextButton();
+        LastPage lastPage = summaryPage.clickNextButton();
+        validate.assertTrue(lastPage.isLoaded());
+        validate.assertTrue(lastPage.congratsTextIsShown());
     }
 }
