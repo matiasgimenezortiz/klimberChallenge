@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Random;
+
 public class Step3Page extends BasePage {
 
     @FindBy(id = "Name")
@@ -162,5 +164,25 @@ public class Step3Page extends BasePage {
         setAptField(atp);
         setZipcodeField(zipCode);
         setCityDropdown(cityName);
+    }
+
+    public static String generateRandomNumberID() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(99999999) + 1;
+        String formattedNumber = String.format("%08d", randomNumber);
+        return formattedNumber;
+    }
+
+    public static String generateRandomEmail() {
+        String[] domains = {"gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "example.com"};
+        String[] prefixes = {"john", "emma", "michael", "sophia", "alex", "olivia", "david", "emily"};
+
+        Random random = new Random();
+        String domain = domains[random.nextInt(domains.length)];
+        String prefix = prefixes[random.nextInt(prefixes.length)];
+
+        int randomNumber = random.nextInt(99999);
+        String email = prefix + randomNumber + "@" + domain;
+        return email;
     }
 }
